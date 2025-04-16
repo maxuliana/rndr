@@ -80,8 +80,13 @@ app.post('/voice', (req, res) => {
   const VoiceResponse = twilio.twiml.VoiceResponse;
   const response = new VoiceResponse();
 
-  // Check if outbound to phone number
+  console.log('--- /voice HIT ---');
+  console.log('To:', req.body.To);
+  console.log('From:', req.body.From);
+  console.log('Request body:', req.body);
+  
   if (req.body.To && req.body.To.match(/^\+\d+$/)) {
+    // Outbound call to phone number
     const dial = response.dial({
       callerId: req.body.From || req.body.phoneNumber || process.env.TWILIO_PHONE_NUMBER,
       answerOnBridge: true,
@@ -89,9 +94,11 @@ app.post('/voice', (req, res) => {
     });
     dial.number(req.body.To);
   } else {
-    // Default: incoming browser call
+    // Call intended for browser client
     response.say('Connecting you to browser client');
-    const dial = response.dial({ answerOnBridge: true });
+    const dial = response.dial({
+      answerOnBridge: true
+    });
     dial.client('browser');
   }
 

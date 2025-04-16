@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: lmd-server
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: TWILIO_ACCOUNT_SID
+        fromGroup: twilio
+      - key: TWILIO_AUTH_TOKEN
+        fromGroup: twilio
+      - key: TWILIO_PHONE_NUMBER
+        fromGroup: twilio
+      - key: PORT
+        value: 3000

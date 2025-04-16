@@ -11,5 +11,9 @@ services:
         fromGroup: twilio
       - key: TWILIO_PHONE_NUMBER
         fromGroup: twilio
+      - key: TWILIO_APP_SID
+        fromGroup: twilio
+      - key: SERVER_URL
+        sync: false # Will be set during deploy
       - key: PORT
         value: 3000

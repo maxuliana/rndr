@@ -129,10 +129,6 @@ app.listen(PORT, async () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Token endpoint: http://localhost:${PORT}/token`);
   
-  // Setup TwiML App on startup
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Token endpoint: http://localhost:${PORT}/token`);
 });
 
 

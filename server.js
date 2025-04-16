@@ -130,10 +130,11 @@ app.listen(PORT, async () => {
   console.log(`Token endpoint: http://localhost:${PORT}/token`);
   
   // Setup TwiML App on startup
-  await setupTwimlApp();
-  console.log(`TwiML App SID: ${twimlAppSid}`);
-  console.log(`Voice URL: ${process.env.SERVER_URL || `http://localhost:${PORT}`}/voice`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Token endpoint: http://localhost:${PORT}/token`);
 });
+
 
 // Instructions for setup:
 // 1. Create a .env file with the following variables:

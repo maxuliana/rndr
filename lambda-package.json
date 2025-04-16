@@ -1,0 +1,15 @@
+{
+  "name": "twilio-token-generator",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to generate Twilio capability tokens",
+  "main": "lambda-server.js",
+  "dependencies": {
+    "twilio": "^4.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "zip -r lambda.zip lambda-server.js node_modules package.json"
+  },
+  "author": "",
+  "license": "MIT"
+}
